@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>Get Cars</title>
+    <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
-<form action="/cars" method="get">
-    <label for="valueCar">Enter value for cars:</label><br>
-    <input type="number" id="valueCar" name="valueCar" value=""><br><br>
-    <input type="submit" value="Get Cars">
-</form>
+<div>
+    <th:block th:each="car : ${carList}">
+        <h1 th:text="${car}"></h1>
+    </th:block>
+</div>
 </body>
 </html>
-
