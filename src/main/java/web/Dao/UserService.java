@@ -5,5 +5,6 @@ import Hiber.Model.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> getUserById();
+    List<User> showUser();
+    User getUser(int s);
 }

@@ -9,15 +9,20 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private static List<User> getUsers() {
+    public List<User> User() {
         List<User> listUser = new ArrayList<>();
-        listUser.add(new User(1, "1", 1));
-
+        listUser.add(new User(1, "Ivan", 25));
+        listUser.add(new User(2, "Andry", 21));
         return listUser;
+    }
+    @Override
+    public List<User> showUser() {
+        return User();
     }
 
     @Override
-    public List<User> getUserById() {
-        return getUsers();
+    public User getUser(int s) {
+        List<User> listUser = User();
+        return listUser.get(s);
     }
 }
