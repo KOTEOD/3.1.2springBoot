@@ -7,13 +7,7 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao {
     private static int i = 0;
-    private final List<User> listUser;
-
-    {
-        listUser = new ArrayList<>();
-        listUser.add(new User(i++, "Ivan", 25));
-        listUser.add(new User(i++, "Andry", 21));
-    }
+    private final List<User> listUser = new ArrayList<>();
 
     @Override
     public List<User> getAllUser() {
@@ -40,6 +34,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void delete(int id) {
+        i--;
         User user = show(id);
         if (null == user) {
             throw new NullPointerException("User not found");

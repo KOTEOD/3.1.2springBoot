@@ -8,7 +8,7 @@
 </head>
 <body>
 <div th:each="user: ${listUser}">
-    <a th:href="@{'/user?id=' + ${user.getId()}}" th:text="${user.getName()}">user</a>
+    <a th:href="@{'/user?id=' + ${user.id}}" th:text="${user.getName()}">user</a>
 </div>
 <hr/>
 <a href="new">Create new user</a>
