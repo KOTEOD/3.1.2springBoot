@@ -28,7 +28,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void save(User user) {
         user.setId(i++);
-        listUser.add(user);
+        getAllUser().add(user);
     }
 
     @Override
@@ -48,10 +48,10 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
-    public static void main(String[] args) {
-        UserDaoImpl userDao = new UserDaoImpl();
-        System.out.println(userDao.getAllUser());
-        userDao.getAllUser().remove(1);
-        System.out.println(userDao.getAllUser());
-    }
+//    public static void main(String[] args) {
+//        UserDaoImpl userDao = new UserDaoImpl();
+//        System.out.println(userDao.getAllUser());
+//        userDao.getAllUser().remove(1);
+//        System.out.println(userDao.getAllUser());
+//    }
 }

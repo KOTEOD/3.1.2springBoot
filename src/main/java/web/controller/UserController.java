@@ -47,11 +47,11 @@ public class UserController {
     }
     @PostMapping("/update")
     public String update(@ModelAttribute("user") User user,
-                         @RequestParam(value = "id") int id) {
+                         @RequestParam("id") int id) {
         UserService.update(id, user);
         return "redirect:/";
     }
-    @DeleteMapping()
+    @GetMapping("/delete")
     public String delete(@RequestParam("id") int id) {
         UserService.delete(id);
         return "redirect:/";
