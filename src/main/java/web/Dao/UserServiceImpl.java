@@ -2,35 +2,36 @@ package web.Dao;
 
 import org.springframework.stereotype.Service;
 import Hiber.Model.User;
+import web.servisr.UserDao;
+import web.servisr.UserDaoImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-
-    private static int i;
-    private List<User> listUser;
-
-    {
-        listUser = new ArrayList<>();
-        listUser.add(new User(i++, "Ivan", 25));
-        listUser.add(new User(i++, "Andry", 21));
-    }
-
+    UserDao userDao = new UserDaoImpl();
 
     @Override
-    public List<User> showUser() {
-        return listUser;
+    public List<User> getAllUser() {
+        return userDao.getAllUser();
     }
 
     @Override
-    public User getUser(int s) {
-        return listUser.get(s);
+    public User show(int s) {
+        return userDao.show(s);
     }
 
     public void save(User user) {
-        user.setId(i++);
-        listUser.add(user);
+        userDao.save(user);
+    }
+
+    @Override
+    public void update(int id, User updateUser) {
+        userDao.update(id, updateUser);
+    }
+
+    @Override
+    public void delete(int id) {
+        userDao.delete(id);
     }
 }
