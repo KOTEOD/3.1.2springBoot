@@ -1,9 +1,7 @@
 package web.Dao;
 
-import org.springframework.transaction.annotation.Transactional;
 import web.Model.User;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -19,7 +17,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User show(int id) {
+    public User show(long id) {
         return entityManager.find(User.class, id);
     }
 
@@ -30,13 +28,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void update(int id, User user) {
+    public void update(long id, User user) {
         entityManager.merge(user);
         entityManager.flush();
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(long id) {
         User user = show(id);
         if (null == user) {
             throw new NullPointerException("User not found");

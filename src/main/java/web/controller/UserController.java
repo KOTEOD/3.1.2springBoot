@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import web.service.UserService;
 
 
-@Controller("/")
-@RequestMapping
+@Controller
+@RequestMapping()
 
 public class UserController {
 
@@ -26,7 +26,7 @@ public class UserController {
 
     @GetMapping("/user")
     public String index(@RequestParam("id") int id, Model model) {
-        model.addAttribute("users", UserService.show(id));
+        model.addAttribute("user", UserService.show(id));
         return "index";
     }
 

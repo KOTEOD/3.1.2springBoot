@@ -1,11 +1,12 @@
 package web.config;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -13,20 +14,18 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
+@ComponentScan(basePackages = "web.Model")
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-//Эта аннотация позволяет использовать аннотации
-// @Transactional для обозначения методов,
-// которые должны быть выполнены в рамках транзакции.
 public class AppConfig {
 
     private final Environment env;
+
     @Autowired
     public AppConfig(Environment env) {
         this.env = env;
@@ -52,10 +51,11 @@ public class AppConfig {
         managerFactory.setJpaProperties(getHibernateProperties());
         return managerFactory;
     }
+
     @Bean
-    public PlatformTransactionManager getTransactionManager(EntityManagerFactory emf) {
+    public PlatformTransactionManager getTransactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(emf);
+        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return transactionManager;
     }
 
