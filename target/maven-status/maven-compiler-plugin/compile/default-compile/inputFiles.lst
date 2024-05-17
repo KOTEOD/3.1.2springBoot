@@ -1,7 +1,10 @@
 /home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/config/AppInit.java
 /home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/Dao/UserServiceImpl.java
 /home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/controller/UserController.java
+/home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/servisr/UserDao.java
 /home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/Model/User.java
+/home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/servisr/UserDaoImpl.java
 /home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/Dao/UserService.java
 /home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/config/WebConfig.java
+/home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/Hiber/Model/User.java
 /home/kotedo/IdeaProjects/PP_2_2_2_spring-mvc_My1/src/main/java/web/config/AppConfig.java

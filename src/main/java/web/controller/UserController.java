@@ -1,10 +1,10 @@
 package web.controller;
 
-import Hiber.Model.User;
+import web.Model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import web.Dao.UserService;
+import web.service.UserService;
 
 
 @Controller
@@ -19,13 +19,13 @@ public class UserController {
 
     @GetMapping("/")
     public String showUser(Model model) {
-        model.addAttribute("listUser", UserService.getAllUser());
+        model.addAttribute("users", UserService.getAllUser());
         return "show";
     }
 
     @GetMapping("/user")
     public String index(@RequestParam("id") int id, Model model) {
-        model.addAttribute("user", UserService.show(id));
+        model.addAttribute("users", UserService.show(id));
         return "index";
     }
 

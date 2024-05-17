@@ -7,7 +7,7 @@
     <title> AllUsers </title>
 </head>
 <body>
-<div th:each="user: ${listUser}">
+<div th:each="user: ${users}">
     <a th:href="@{'/user?id=' + ${user.id}}" th:text="${user.getName()}">user</a>
 </div>
 <hr/>

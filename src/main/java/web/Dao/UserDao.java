@@ -1,13 +1,13 @@
 package web.Dao;
 
-import Hiber.Model.User;
+import web.Model.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
     List<User> getAllUser();
-    User show(int s);
+    User show(int id);
     void save(User user);
-    void update(int id, User user);
+    void update(int id,User user);
     void delete(int id);
 }

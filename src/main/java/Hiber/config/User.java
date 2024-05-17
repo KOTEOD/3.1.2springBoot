@@ -1,17 +1,13 @@
-package Hiber.Model;
+package Hiber.config;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
-@Entity
-@Table
 public class User {
-    @Id
-    @GeneratedValue
     private int id;
-    @Column(name = "Name")
+
     private String name;
-    @Column(name = "Age")
+
     private int age;
 
     public User() {
@@ -49,10 +45,7 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id == user.id && age == user.age && Objects.equals(name, user.name);
+        return User.super.equals(o);
     }
 
     @Override
@@ -62,9 +55,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User" + '\n' +
+        return "User (" +
                 "id=" + id +
                 ", name = " + name + '\'' +
-                ", age = " + age ;
+                ", age = " + age + ")";
     }
 }
