@@ -10,7 +10,7 @@ import java.util.Objects;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
+    public int id;
     @Column
     private String name;
     @Column
