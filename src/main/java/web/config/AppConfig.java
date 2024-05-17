@@ -1,6 +1,7 @@
 package web.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,11 +25,10 @@ import java.util.Properties;
 //Эта аннотация позволяет использовать аннотации
 // @Transactional для обозначения методов,
 // которые должны быть выполнены в рамках транзакции.
-@ComponentScan(value = "web")
 public class AppConfig {
 
     private final Environment env;
-
+    @Autowired
     public AppConfig(Environment env) {
         this.env = env;
     }

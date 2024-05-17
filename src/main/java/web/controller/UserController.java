@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import web.service.UserService;
 
 
-@Controller
-//@RequestMapping()//анатация которая создаёт прификс /My
+@Controller("/")
+@RequestMapping
+
 public class UserController {
 
     private final UserService UserService;

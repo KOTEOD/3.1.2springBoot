@@ -7,15 +7,15 @@
     <title>One User</title>
 </head>
 <body>
-<p th:text="${user.getId}"></p>
-<p th:text="${user.name}"></p>
-<p th:text="${user.age}"></p>
+<p th:text="${users.id}"></p>
+<p th:text="${users.name}"></p>
+<p th:text="${users.age}"></p>
 <p></p>
-<a th:href="@{/edit(id=${user.id})}">Edit User</a>
+<a th:href="@{/edit(id=${users.id})}">Edit User</a>
 <hr>
 <br>
 <form method="GET" action="/delete">
-    <input type="hidden" name="id" th:value="${user.id}">
+    <input type="hidden" name="id" th:value="${users.id}">
     <input type="submit" value="Delete">
 </form>
 </body>
