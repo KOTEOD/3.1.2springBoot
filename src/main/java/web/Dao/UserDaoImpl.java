@@ -24,14 +24,18 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void save(User user) {
-        entityManager.persist(user);
-        entityManager.flush();
+        if(user.getAge() > 0 && user.getAge() <150) {
+            entityManager.persist(user);
+            entityManager.flush();
+        }
     }
 
     @Override
     public void update(long id, User user) {
-        entityManager.merge(user);
-        entityManager.flush();
+        if(user.getAge() > 0 && user.getAge() <150) {
+            entityManager.merge(user);
+            entityManager.flush();
+        }
     }
 
     @Override

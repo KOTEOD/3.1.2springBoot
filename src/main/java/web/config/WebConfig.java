@@ -30,11 +30,6 @@ public class WebConfig implements WebMvcConfigurer, WebApplicationInitializer {
         this.applicationContext = null;
     }
 
-    @Autowired
-    public WebConfig(ApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
-    }
-
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
