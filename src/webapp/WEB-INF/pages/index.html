@@ -4,12 +4,12 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>One User</title>
+    <title> Users </title>
 </head>
 <body>
-<p th:text="${user.id}"></p>
-<p th:text="${user.name}"></p>
-<p th:text="${user.age}"></p>
+<p th:text=" 'ID: ' + ${user.id}"></p>
+<p th:text=" 'NAME: ' + ${user.name}"></p>
+<p th:text="'AGE: '+ ${user.age}"></p>
 <p></p>
 <a th:href="@{/edit(id=${user.id})}">Edit User</a>
 <hr>
